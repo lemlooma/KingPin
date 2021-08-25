@@ -3,10 +3,10 @@ from app.models import db, Team, user_team, User
 
 def seed_users_teams():
     backend = Team(title=' Backend')
-    frontend = Team(title='frontend')
+    frontend = Team(title='Frontend')
     design = Team(title='Design')
     dev_ops = Team(title='Dev Ops')
-    customer_support = Team(title='Sustomer Support')
+    customer_support = Team(title='Customer Support')
     product_team = Team(title='Product Team')
 
     demo = User(
