@@ -8,10 +8,11 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-
+import SplashPage from "./components/splash-page/SplashPage";
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     (async() => {
@@ -34,6 +35,12 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <Route path="/splash" exact={true}>
+          <SplashPage
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}
+          />
+          </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
