@@ -15,7 +15,6 @@ This is the starter for the Flask React project.
       ```bash
       pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
       ```
-
 3. Create a **.env** file based on the example with proper settings for your
    development environment
 4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
