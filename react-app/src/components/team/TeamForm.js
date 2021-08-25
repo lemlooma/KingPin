@@ -17,6 +17,7 @@ const TeamForm = ( { prop } ) => {
     if (prop.id) setTeamUsers(teams[prop.id].users);
     dispatch(getUsersFunction());
   },[])
+
   const onSubmit = (e) => {
     e.preventDefault();
       let error = []

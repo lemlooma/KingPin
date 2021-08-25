@@ -1,19 +1,19 @@
 /* TODO Add site wide styles */
 /* UNIVERSAL */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
 
 :root {
-    --CHARCOAL: #222b37;
-    --SIDEBAR_CHARCOAL: #151b26;
-    --SIDEBAR_CHARCOAL_HIGHLIGHT: #3a4049;
-    --GREY_TEXT: #cbd4db;
+    --CHARCOAL: #000000;
+    --SIDEBAR_CHARCOAL: #000000;
+    --SIDEBAR_CHARCOAL_HIGHLIGHT: #000000;
+    --GREY_TEXT: #000000;
     --GREY_TEXT_LABELS: #6e7782;
     --WHITE: #ffffff;
     --ORANGE_FADE: #fe9c2a;
-    --RED_FADE: #fa5356;
+    --RED_FADE: #34c82e;
     --GOLD: #fbbc00;
     --SKY_BLUE: #19aaf5;
-    --VIOLET: #786dff;
+    --VIOLET: #61eb78;
     --AQUA_GREEN: #25e9c8;
     --DUE_DATE_GREEN: #3cbf9c;
     --GREY_GRID: #cbd4db;

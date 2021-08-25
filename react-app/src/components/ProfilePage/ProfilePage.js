@@ -6,8 +6,9 @@ import ProjectDisplay from "./ProjectDisplay";
 import TaskDisplay from "./TaskDisplay";
 import ProjectDeleteForm from "./ProjectDeleteForm";
 import { Modal } from "../../context/Modal";
+import pics from "../../frontend-assets/remove_icon.png";
 const ProfilePage = () => {
-  const remove_icon = require("../../frontend-assets/remove_icon.png");
+  
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const user = useSelector((state) => state.session.user);
@@ -57,7 +58,7 @@ const ProfilePage = () => {
             </h3>
             <img
               className="remove-project-button"
-              src={remove_icon}
+              src={pics}
               onClick={onDelete}
             ></img>
 
@@ -70,7 +71,7 @@ const ProfilePage = () => {
           {divider}
           <ProjectDisplay projects={my_projects} />
           <div style={{ paddingTop: "50px" }}>
-            <h3 className="min-margin">Team Projects</h3> */}
+            <h3 className="min-margin">Team Projects</h3> 
            </div>
            {divider} 
           <ProjectDisplay projects={current_projects} />

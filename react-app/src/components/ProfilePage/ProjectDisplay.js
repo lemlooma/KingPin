@@ -3,9 +3,10 @@ import { NavLink } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import { Modal } from '../../context/Modal';
 import ProjectForm from '../ProjectForm';
+import pic from "../../frontend-assets/add_project_icon.png";
 
 const ProjectDisplay = ({ projects }) => {
-    const add_project_icon = require('../../frontend-assets/add_project_icon.png');
+   
 
     const [showModal, setShowModal] = useState(false);
 
@@ -17,7 +18,7 @@ const ProjectDisplay = ({ projects }) => {
         <div className="my-project-wrap">
             <div className="project-card">
                 <NavLink onClick={onClick} to={`/new_project`}>
-                    <img alt="new_project_icon" src={add_project_icon}></img>
+                    <img alt="new_project_icon" src={pic}></img>
                 </NavLink>
                 {showModal && (
                         <Modal onClose={() => setShowModal(false)}>

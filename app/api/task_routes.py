@@ -85,19 +85,19 @@ def edit(id):
     return task.to_dict()
 
 
-@task_routes.route('/<int:id>', methods=["DELETE"])
-@login_required
-def delete(id):
-    task = Task.query.get(id)
-    delete_task(task, id)
-    db.session.commit()
-    return {'id': id}
+# @task_routes.route('/<int:id>', methods=["DELETE"])
+# @login_required
+# def delete(id):
+#     task = Task.query.get(id)
+#     delete_task(task, id)
+#     db.session.commit()
+#     return {'id': id}
 
 
-@task_routes.route('/<int:task_id>/comments')
-@login_required
-def all_comments(task_id):
-    comments = (db.session.query(Comment, User.username).join(User)
-                .filter(Comment.task_id == task_id).all())
-    return ({comment.id: {**comment.to_dict(), **{"user": name}}
-             for comment, name in comments})
+# @task_routes.route('/<int:task_id>/comments')
+# @login_required
+# def all_comments(task_id):
+#     comments = (db.session.query(Comment, User.username).join(User)
+#                 .filter(Comment.task_id == task_id).all())
+#     return ({comment.id: {**comment.to_dict(), **{"user": name}}
+#              for comment, name in comments})
