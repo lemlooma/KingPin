@@ -1,1 +1,805 @@
 /* TODO Add site wide styles */
+/* UNIVERSAL */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --CHARCOAL: #222b37;
+    --SIDEBAR_CHARCOAL: #151b26;
+    --SIDEBAR_CHARCOAL_HIGHLIGHT: #3a4049;
+    --GREY_TEXT: #cbd4db;
+    --GREY_TEXT_LABELS: #6e7782;
+    --WHITE: #ffffff;
+    --ORANGE_FADE: #fe9c2a;
+    --RED_FADE: #fa5356;
+    --GOLD: #fbbc00;
+    --SKY_BLUE: #19aaf5;
+    --VIOLET: #786dff;
+    --AQUA_GREEN: #25e9c8;
+    --DUE_DATE_GREEN: #3cbf9c;
+    --GREY_GRID: #cbd4db;
+    --GREY_HIGHLIGHT: #f5f8f9;
+}
+
+body {
+    background-color: var(--WHITE);
+    color: var(--CHARCOAL);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* DEFAULT MODAL DESIGN */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+
+.modal-content {
+  position: absolute;
+  background-color: transparent;
+}
+
+
+/* PROFILE LOGOUT BUTTON MODAL */
+
+.profileDropdown {
+  position: relative;
+}
+
+.profileContent {
+  position: absolute;
+  right: 18px;
+  top: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--GREY_GRID);
+  outline: none;
+  box-shadow: 1px 1px 5px 1px var(--GREY_GRID);
+}
+
+#logout {
+  width: 60px;
+  height: 20px;
+  padding: 5px;
+}
+
+
+/* TASK DETAILS MODAL */
+.taskDetailContainer {
+  background-color: var(--WHITE);
+  border: 1px solid var(--GREY_GRID);
+  box-shadow: 1px 1px 1px 1px var(--WHITE);
+
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  height: 85vh;
+  width: 90%;
+}
+
+.taskDetailContent {
+  overflow-y: scroll;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.commentText {
+  width: 300px;
+  padding-left: 5px;
+  font-size: 14px;
+  margin: 0px;
+}
+
+
+.comment-container {
+    display:flex;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom:25px;
+    height: 30px;
+
+}
+
+.commenter-icon {
+  width: 20px;
+  height: 20px;
+  padding-left: 10px;
+}
+
+.commenter-initial {
+  position: relative;
+  font-size: 10px;
+  top: 4px;
+  left: -13px;
+  color: white;
+}
+
+/* COMMENT FORM */
+
+.modalCommentForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.modalCommentForm form {
+  margin-top: 0px;
+  padding: 10px;
+  width: 450px;
+}
+
+.modalCommentForm input {
+  width: 100%;
+  margin: 0px;
+}
+
+.dropDownDiv {
+  width: 50px;
+  height: 15px;
+  padding: 2px;
+  position: relative;
+  left: 30px;
+  top: 0px;
+  font-size: 14px;
+}
+
+.outline {
+  width: 40px;
+  height: 15px;
+  padding: 2px;
+}
+
+.commentSelect {
+  font-size: 14px;
+  top: 0px;
+  position: relative;
+  left: 35px;
+}
+
+
+/* Task Details Update Form */
+
+.task-detail-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0px;
+  padding: 10px;
+  box-shadow: none;
+}
+
+.task-detail-form > label {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.task-detail-form > label > h3 {
+  width: 85px;
+}
+
+.task-detail-form > label > input {
+  padding: 5px 10px 5px 10px;
+  margin: 10px 10px 10px 20px;
+  display: flex;
+  width: 75%;
+  justify-content: flex-end;
+}
+
+.task-detail-form > label > select {
+  padding: 5px 10px 5px 10px;
+  margin: 10px 10px 10px 20px;
+  display: flex;
+  width: 75%;
+  justify-content: flex-end;
+  border: 2px solid var(--GREY_GRID);
+  border-radius: 5px;
+}
+
+.task-detail-form > textarea {
+  margin-right: 20px;
+  padding: 15px;
+  min-width: 300px;
+  width: 90%;
+  height: 50px;
+  border: 2px solid var(--GREY_GRID);
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--GREY_HIGHLIGHT);
+}
+
+
+
+
+/* ROOT LAYOUT */
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app-container {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 55px 1fr 55px;
+    height: 100vh;
+}
+
+.header{
+    grid-area: header;
+    background-color: var(--CHARCOAL)
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: var(--CHARCOAL);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+    font-size: 14px;
+    color: white;
+}
+
+.footer-image {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+
+
+/* PROFILE PAGE */
+.profile-container {
+    display: grid;
+    grid-template-areas:
+      "sidebar tasks"
+      "sidebar my-projects";
+
+    grid-template-columns: 275px 1fr;
+    grid-template-rows: 200px 1fr;
+    grid-gap: 5px;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100vw;
+}
+
+.my-projects{
+    grid-area: my-projects;
+    display: flex;
+    padding-left: 100px;
+}
+
+.my-project-wrap {
+    grid-area: my-projects;
+    display: flex;
+    overflow-x: scroll;
+    width: 70vw;
+}
+
+.project-card {
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  flex-direction: column;
+  text-transform: capitalize;
+  align-items: center;
+  margin: 10px;
+  transition: background-color 400ms, color 400ms, box-shadow 300ms;
+}
+
+.project-card:hover {
+  background-color: var(--GREY_HIGHLIGHT);
+  border-radius: 10px;
+  color: var(--VIOLET);
+  box-shadow: 1px 1px 15px 1px var(--GREY_GRID);
+}
+
+.project-card h5 {
+  text-align: center;
+}
+
+.my-tasks{
+    grid-area: tasks;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.my-task-row-entries{
+    display: flex;
+    width: 500px;
+    border: 2px solid var(--GREY_GRID);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    flex-direction: column;
+    max-height: 125px;
+    overflow-y: scroll;
+}
+
+.my-task-row {
+    display: grid;
+    grid-template-areas:
+      "complete task due-date";
+    grid-template-columns:30px 1fr 75px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: var(--WHITE);
+    font-size: 14px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+
+/* PROJECT PAGE */
+.project-page-container {
+    display: grid;
+    grid-template-areas:
+      "sidebar table-header"
+      "sidebar table-content";
+
+    grid-template-columns: 275px 1fr;
+    grid-template-rows: 75px 1fr;
+    grid-gap: 5px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--WHITE);
+}
+
+.project-page-header{
+    grid-area: table-header;
+    display: grid;
+    grid-template-areas:
+      ". task-icon title-status . .";
+    grid-template-columns: 60px 100px 300px 1fr 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    line-height: 10px;
+}
+
+.project-page-content{
+    grid-area: table-content;
+    margin: 10px;
+}
+
+.remove-project-button {
+  width: 20px;
+  height: 20px;
+  margin: 20px 0 10px 20px;
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+.remove-project-button:hover {
+  transform: scale(1.2);
+}
+
+
+/* SIDEBAR */
+.sidebar-container {
+    display: grid;
+    grid-template-areas:
+      "sidebar-nav"
+      "sidebar-teams";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 20px 1fr;
+    grid-gap: 5px;
+    height: 100%;
+    width: 100%;
+    color: var(--GREY_TEXT);
+    background-color: var(--SIDEBAR_CHARCOAL);
+}
+
+.sidebar-nav{
+    grid-area: sidebar-nav;
+    padding-left: 30px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar-teams{
+    grid-area: sidebar-teams;
+    padding-left: 30px;
+    line-height: 10px;
+}
+
+.sidebar-team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 16px;
+}
+
+.sidebar-container p {
+  margin: 10px 0px 10px 0px;
+  font-size: 16px;
+}
+.sidebar-container h4 {
+  margin: 20px 0px 20px 0px;
+  font-size: 18px;
+  color: var(--GREY_TEXT_LABELS);
+}
+
+.sidebar-container a {
+  color: var(--GREY_TEXT);
+  font-size: 14px;
+}
+
+.sidebar-container a:hover {
+  color: var(--GREY_TEXT);
+  font-size: 14px;
+  background-color: var(--SIDEBAR_CHARCOAL);
+}
+
+.add-team-button {
+  width: 20px;
+  padding-right: 20px;
+  transition: transform 300ms;
+  cursor: pointer;
+}
+
+.add-team-button:hover {
+  transform: scale(1.2);
+}
+
+
+/* TASK TABLE LAYOUT */
+.project-task-container {
+    display: grid;
+    grid-template-areas:
+      "task-header"
+      "task-table"
+      ".";
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.task-header{
+    grid-area: task-header;
+    display: grid;
+    grid-template-areas:
+      "add-task . filter sort .";
+    grid-template-columns: 200px 1fr 50px 50px 100px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.task-container{
+    grid-area: task-table;
+    display: grid;
+    grid-template-areas:
+      "task-row-titles"
+      "task-row-entries";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-height: 60vh;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+}
+
+.task-row-titles{
+    grid-area: task-row-titles;
+    color: var(--GREY_TEXT_LABELS);
+}
+
+.task-row-entries{
+    grid-area: task-rows;
+    color: var(--CHARCOAL);
+}
+
+.task-form{
+    color: var(--GREY_TEXT_LABELS);
+}
+
+.task-row {
+    display: grid;
+    grid-template-areas:
+      "complete task assignee due-date";
+    grid-template-columns:50px 1fr 200px 200px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    background-color: var(--WHITE);
+    font-size: 14px;
+}
+
+.task-row:hover {
+    background-color: var(--GREY_HIGHLIGHT);
+}
+
+td {
+    border-top: 1px solid var(--GREY_GRID);
+    border-right: 1px solid var(--GREY_GRID);
+    padding: 10px;
+}
+
+.complete-task-button {
+  width: 20px;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.complete-task-button:hover {
+  transform: scale(1.2);
+}
+
+.remove-task-button {
+  width: 20px;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: transform 300ms;
+}
+
+.remove-task-button:hover {
+  transform: scale(1.2);
+}
+
+
+
+/* LINKS */
+
+a {
+    text-decoration: none;
+    color:var(--SIDEBAR_CHARCOAL_HIGHLIGHT);
+    transition: color 400ms;
+}
+
+a:hover {
+    color:var(--DUE_DATE_GREEN)
+}
+
+.nav-container {
+    display: grid;
+    grid-template-areas:
+      "logo-home . profile";
+    grid-template-columns: 200px 1fr 100px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    line-height: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-link {
+  color: var(--SKY_BLUE);
+  text-decoration: none;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: background-color 400ms, color 400ms;
+}
+
+.nav-link:hover {
+  background-color: var(--GREY_TEXT_LABELS);
+  color: white;
+}
+
+
+
+/* FORMS  */
+
+form {
+    width: 300px;
+    background-color: var(--WHITE);
+    color: var(--GREY_TEXT_LABELS);
+    text-align: left;
+    font-size: 12px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 1px var(--GREY_GRID);
+}
+
+form button {
+    background-color: var(--VIOLET);
+    border: 1px solid var(--VIOLET);
+    border-radius: 5px;
+    color: var(--WHITE);
+    width: 100%;
+    padding: .75em 1em;
+    margin-top: 20px;
+    transition: background-color 400ms, border 400ms, color 400ms;
+}
+
+form button:hover {
+    background-color: var(--RED_FADE);
+    border: 1px solid var(--RED_FADE);
+    color: white;
+}
+
+input {
+  border-radius: 5px;
+  border: 2px solid var(--GREY_GRID);
+
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--WHITE);
+
+  width: 100%;
+  margin: 10px 0px 30px 0px;
+  padding: 10px;
+  outline: 0;
+}
+
+input:focus {
+  border: 2px solid var(--VIOLET);
+}
+
+
+/* Task Form (Row) */
+
+.task-form-container {
+    width: 300px;
+    background-color: var(--ORANGE_FADE);
+    color: var(--GREY_TEXT_LABELS);
+    text-align: left;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+
+    display: grid;
+    grid-template-areas:
+      "complete task assignee due-date";
+    grid-template-columns:50px 1fr 200px 200px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    background-color: var(--WHITE);
+    font-size: 14px;
+}
+
+.task-form-button {
+    background-color: var(--WHITE);
+    border: 1px solid var(--WHITE);
+    color: var(--WHITE);
+    border-radius: 0px;
+    width: 15%;
+    padding: 0px;
+    margin: 0px;
+    transition: transform 300ms, background-color 300ms;
+    cursor: pointer;
+}
+
+.task-form-button:hover {
+    background-color: var(--AQUA_GREEN);
+    border: 1px solid var(--AQUA_GREEN);
+    transform: scale(1.1);
+    color: white;
+}
+
+.task-form-input {
+    border-radius: 0px;
+    border: none;
+    display: block;
+    box-sizing: border-box;
+    background-color: var(--WHITE);
+    color: var(--CHARCOAL);
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    outline: 0;
+    border-top: 1px solid var(--GREY_GRID);
+    border-right: 1px solid var(--GREY_GRID);
+    padding: 10px;
+}
+
+.task-form-select {
+  border-top: 1px solid var(--GREY_GRID);
+  border-right: 1px solid var(--GREY_GRID);
+  border-bottom: none;
+  border-left: none;
+}
+
+
+/* MISC  */
+
+.capitalize {
+  text-transform: capitalize
+}
+
+.min-margin {
+  margin: 20px 0 10px 0;
+}
+
+.profile-icon-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 25px;
+  margin-right:5px;
+}
+
+.profile-icon-bg {
+  height: 25px;
+}
+
+.profile-initial {
+  position: relative;
+  right: 17px;
+  font-size: 12px;
+}
+
+.team-title-button-div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.user-multiselect{
+  display: flex;
+  flex-direction: row;
+  width:100%
+}
+.current-team-members{
+  color: #151b26;
+}
+.project-select{
+  display: flex;
+  flex-direction: row;
+  width:100%
+}
