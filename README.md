@@ -110,7 +110,7 @@ variables.
 
 ### For M1 Mac users
 
-(Replaces **Step 8**)
+(Replaces **Step 8**) 
 
 1. Build image with linux platform for heroku servers. Replace
 {NAME_OF_HEROKU_APP} with your own tag:
