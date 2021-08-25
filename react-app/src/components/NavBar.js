@@ -1,38 +1,79 @@
-
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import LogoutButton from "./auth/LogoutButton";
 
 const NavBar = () => {
+  const profile_icon = ("https://i.imgur.com/vFYHbIg.png");
+  const kingpin_banner = ("https://i.imgur.com/aijSCPA.png");
+
+  const history = useHistory();
+
+  const [showMenu, setShowMenu] = useState(false);
+
+  const openMenu = (e) => {
+    e.preventDefault();
+    if (showMenu) return;
+    setShowMenu(true);
+  };
+
+  useEffect(() => {
+    if (!showMenu) return;
+    const closeMenu = (e) => {
+      e.preventDefault();
+      setShowMenu(false);
+    };
+    document.addEventListener("click", closeMenu);
+    return () => document.removeEventListener("click", closeMenu);
+  }, [showMenu]);
+
+  const user = useSelector((state) => state.session.user);
+
+  let user_initial;
+  if (user) {
+    user_initial = user.username.split("")[0].toUpperCase();
+  }
+
+  const return_home = () => {
+    history.push("/");
+  };
+
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
+    <nav className="nav-container">
+      {user && (
+        <div onClick={return_home}>
+          <img
+            style={{ height: "45px", paddingRight: "15px" }}
+            alt="logo"
+            src={kingpin_banner}
+          ></img>
+        </div>
+      )}
+      <div></div>
+      {user_initial && (
+        <>
+          <div onClick={openMenu} className="flex-container">
+            <img
+              style={{ width: "30px", paddingLeft: "10px" }}
+              src={profile_icon}
+            ></img>
+            <p style={{ position: "relative", left: "-45px" }}>
+              {user_initial}
+            </p>
+          </div>
+          {showMenu && (
+            <div>
+              {user && (
+                <div id="logout" className="profileContent nav-link">
+                  <LogoutButton />
+                </div>
+              )}
+            </div>
+          )}
+        </>
+      )}
     </nav>
   );
-}
+};
 
 export default NavBar;

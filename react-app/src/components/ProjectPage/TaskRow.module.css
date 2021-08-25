@@ -1,0 +1,26 @@
+#modal {
+    position: fixed;
+    top: 50px;
+    right: 1px;
+    left: auto;
+    display: flex;
+    width: 600px;
+    height: 735px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #modalBackground {
+    position: fixed;
+    top: 50px;
+    right: 1px;
+    left: auto;
+    bottom: 0;
+    background-color: transparent;
+  }
+
+  #modalContent {
+    position: absolute;
+    top: 0px;
+    background-color: transparent;
+  }

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Task, Project, db, Comment, User
+from app.models import Task, Project, db,  User
 # from app.api.comment_routes import delete_comment
 from app.forms import TaskForm
 from flask_login import login_required
