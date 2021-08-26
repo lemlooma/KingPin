@@ -11,6 +11,7 @@ const removeUser = () => ({
   type: REMOVE_USER,
 });
 
+
 // thunks
 
 export const authenticate = () => async (dispatch) => {

@@ -65,9 +65,9 @@ function App() {
             <ProjectForm />
           </ProtectedRoute>
         </Switch>
-        <div className={`footer`}>
-          <Footer />
-        </div>
+         <div className={`footer`}>
+          <Footer /> 
+         </div> 
       </div>
     </BrowserRouter>
   );

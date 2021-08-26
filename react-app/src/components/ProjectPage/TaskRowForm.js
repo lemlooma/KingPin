@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { makeTaskFunction, getTasksFunction } from '../../store/task'
-
+import addtask from "../../frontend-assets/aqua_add_icon.png";
 const TaskRowForm = ({users, project, lastTask, setLastTask}) => {
-    const add_task_icon = require('../../frontend-assets/aqua_add_icon.png')
     const task = useSelector(state => state.task.task);
     const dispatch = useDispatch(); 
     const [title, setTitle] = useState('');
@@ -38,7 +37,7 @@ const TaskRowForm = ({users, project, lastTask, setLastTask}) => {
     return (
         <form className="task-form-container" onSubmit={onSubmit}>
             <button className="task-form-button" type='submit'>
-                <img style={{ 'width': '20px', 'paddingLeft': '18px' }} src={add_task_icon}></img>
+                <img style={{ 'width': '20px', 'paddingLeft': '18px' }} src={addtask}></img>
             </button>
             <input
                 className="task-form-input"

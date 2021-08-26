@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import ProjectForm from "../ProjectForm";
-
+import tasklist from "../../frontend-assets/task_list_icon.png";
+import checkmark from "../../frontend-assets/aqua_checkmark.png";
+import uncheckmark from "../../frontend-assets/grey_checkmark.png";
 const ProjectHeader = ({project, projectStatus, toggleProjectStatus}) => {
     const [showModal, setShowModal] = useState(false);
-    const task_list_icon = require("../../frontend-assets/task_list_icon.png")
-    const incomplete_check = require('../../frontend-assets/grey_checkmark.png')
-    const complete_check = require('../../frontend-assets/aqua_checkmark.png')
     const completed = project?.complete === true ? 'Completed' : 'In Progress'
 
     const onClick = e => {
@@ -15,13 +14,13 @@ const ProjectHeader = ({project, projectStatus, toggleProjectStatus}) => {
     };
 
     let statusDisplay;
-    projectStatus ? statusDisplay = complete_check : statusDisplay = incomplete_check
+    projectStatus ? statusDisplay = checkmark : statusDisplay = uncheckmark
 
     return (
         <>
             <div></div>
             <div className='flex-container' style={{ 'width': '100%', 'height':'100%', 'transform':'scale(.8)', 'paddingTop':'10px' }}>
-                <img onClick={onClick} title="Create Project" src={task_list_icon} alt="task_icon"></img>
+                <img onClick={onClick} title="Create Project" src={tasklist} alt="task_icon"></img>
                 { showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <ProjectForm />

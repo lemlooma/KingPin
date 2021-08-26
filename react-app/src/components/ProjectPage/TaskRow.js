@@ -8,6 +8,7 @@ import styles from './TaskRow.module.css';
 import checkmark from "../../frontend-assets/aqua_checkmark.png";
 import uncheckmark from '../../frontend-assets/grey_checkmark.png';
 import deleteicon from "../../frontend-assets/remove_icon.png";
+
 const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
  
 
