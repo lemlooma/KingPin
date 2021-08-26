@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import TaskDetails from "../task/TaskDetails";
 
+
 const TaskRow = ({ task }) => {
 
     const [showModal, setShowModal] = useState(false);

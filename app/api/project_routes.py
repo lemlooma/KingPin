@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, session, request
 from flask_login import login_required
 from app.models import db, Project, Task, Team, User
-# from app.api.task_routes import delete_task
+from app.api.task_routes import delete_task
 
 project_routes = Blueprint('projects', __name__)
 
@@ -59,18 +59,18 @@ def update_project_status(id):
     return project.to_dict() if project else {"Project": "Null"}
 
 
-# @project_routes.route("/<int:id>", methods=["GET", "DELETE"])
-# @login_required
-# def project(id):
-#     project = Project.query.get(id)
-#     if request.method == "DELETE":
-#         tasks = Task.query.filter_by(project_id=id).all()
-#         length = len(tasks)
-#         i = 0
-#         while i < length:
-#             delete_task(tasks[i], tasks[i].id)
-#             i += 1
-#         db.session.delete(project)
-#         db.session.commit()
-#         return {'id': id}
-#     return project.to_dict() if project else {"Project": "Null"}
+@project_routes.route("/<int:id>", methods=["GET", "DELETE"])
+@login_required
+def project(id):
+    project = Project.query.get(id)
+    if request.method == "DELETE":
+        tasks = Task.query.filter_by(project_id=id).all()
+        length = len(tasks)
+        i = 0
+        while i < length:
+            delete_task(tasks[i], tasks[i].id)
+            i += 1
+        db.session.delete(project)
+        db.session.commit()
+        return {'id': id}
+    return project.to_dict() if project else {"Project": "Null"}
