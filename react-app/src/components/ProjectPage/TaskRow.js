@@ -5,11 +5,11 @@ import { Modal } from "../../context/Modal";
 import { updateTaskFunction  } from '../../store/task'
 import TaskDetails from "../task/TaskDetails";
 import styles from './TaskRow.module.css';
-
+import checkmark from "../../frontend-assets/aqua_checkmark.png";
+import uncheckmark from '../../frontend-assets/grey_checkmark.png';
+import deleteicon from "../../frontend-assets/remove_icon.png";
 const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
-    const incomplete_check = require('../../frontend-assets/grey_checkmark.png');
-    const complete_check = require('../../frontend-assets/aqua_checkmark.png');
-    const remove_icon = require('../../frontend-assets/remove_icon.png');
+ 
 
     const dispatch = useDispatch();
     const { project_id } = useParams();
@@ -44,7 +44,7 @@ const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
     task.due_date ? due= dateFormat(task.due_date) : due=""
 
     let statusImg;
-    status ? statusImg = complete_check : statusImg = incomplete_check;
+    status ? statusImg = checkmark : statusImg = uncheckmark ;
 
     let assignedUser, assignee, assigneeId;
     if (users && task.user_id) { assignedUser = users.find(user => user.id == task.user_id) }
@@ -67,7 +67,7 @@ const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
                                     <TaskDetails users={users} task={task} onClick={onClick}/>
                                 </Modal>
                             )}
-                            <img onClick={deleteThisTask} className="remove-task-button" src={remove_icon}></img>
+                            <img onClick={deleteThisTask} className="remove-task-button" src={deleteicon}></img>
                         </div>
                     </td>
                     <td>{assignee}</td>

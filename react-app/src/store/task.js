@@ -57,7 +57,7 @@ export const getOneTaskFunction = (taskId) => async dispatch => {
 
 export const deleteTaskFunction = (taskId) => async dispatch => {
     const response = await fetch(`/api/tasks/${taskId}`, {
-        headers: {'Content-Type': 'application/json'},
+    
         method: 'DELETE',
     });
     if (response.ok) {
@@ -65,6 +65,8 @@ export const deleteTaskFunction = (taskId) => async dispatch => {
         dispatch(deleteTask(deletedTaskIdObj))
     }
 }
+
+
 export const makeTaskFunction = (projectId,  title, complete, userId, dueDate, description) => async dispatch => {
     const response = await fetch('/api/tasks/', {
         headers: {'Content-Type': 'application/json'},
@@ -131,12 +133,13 @@ const taskReducer = (state=initialState, action) => {
         case DELETE: {
             const newState = {...state};
             const id = action.payload.id
-            delete newState[id]
+            delete newState[action.taskId]
             // if(newState.task[id]) delete newState.task[id]
             newState.tasks = newState.tasks.filter(task => task.id !== id)
             return {
                 ...newState
             }
+        
         }
         case CRU: {
             const newState = {...state}
