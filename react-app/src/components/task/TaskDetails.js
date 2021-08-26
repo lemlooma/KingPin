@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
-// import { comments, deleteComment } from '../../store/comment';
+
 import { deleteTaskFunction, updateTaskFunction } from '../../store/task';
-// import CommentForm from "../CommentForm"
 
 const TaskDetails = ({ users, task, onClick}) => {
     const profile_icon_violet = require('../../frontend-assets/profile_icon_violet.png');
@@ -13,10 +12,8 @@ const TaskDetails = ({ users, task, onClick}) => {
 
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
-    // const taskComment = useSelector(state => state.comment.comments);
 
     const [showMenu, setShowMenu] = useState(null);
-    // const [currComment, setCurrComment] = useState(null);
 
     const dateFormat = (dateStr) => {
         if(dateStr === null) return dateStr
@@ -71,19 +68,6 @@ const TaskDetails = ({ users, task, onClick}) => {
         history.push(`/projects/${project_id}`)
     }
 
-
-    // const onDeleteSelect = (id) => () => {
-    //     dispatch(deleteComment(id));
-    //     dispatch(comments(task.id))
-    // };
-
-    // const onEdit = (comment) => () => {
-    //     setCurrComment(comment);
-    // };
-
-    // useEffect(() => {
-    //     dispatch(comments(task.id))
-    // }, [dispatch, history]);
 
  return (
      <div className="taskDetailContainer">

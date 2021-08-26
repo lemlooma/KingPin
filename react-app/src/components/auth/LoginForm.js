@@ -20,10 +20,10 @@ const LoginForm = () => {
 
   const demoLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login("demo@aa.io", "password"));
-    if (data.errors) {
-      setErrors(data.errors);
-    }
+    await dispatch(login("demo@aa.io", "password"));
+    // if (data.errors) {
+    //   setErrors(data.errors);
+    // }
   };
 
   const updateEmail = (e) => {

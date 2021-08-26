@@ -4,16 +4,16 @@
 
 :root {
     --CHARCOAL: #000000;
-    --SIDEBAR_CHARCOAL: #000000;
-    --SIDEBAR_CHARCOAL_HIGHLIGHT: #000000;
-    --GREY_TEXT: #000000;
+    --SIDEBAR_CHARCOAL: #1d1b1b;
+    --SIDEBAR_CHARCOAL_HIGHLIGHT: #757070a2;
+    --GREY_TEXT: #ffffff;
     --GREY_TEXT_LABELS: #6e7782;
     --WHITE: #ffffff;
     --ORANGE_FADE: #fe9c2a;
     --RED_FADE: #34c82e;
     --GOLD: #fbbc00;
     --SKY_BLUE: #19aaf5;
-    --VIOLET: #61eb78;
+    --VIOLET: #58be69;
     --AQUA_GREEN: #25e9c8;
     --DUE_DATE_GREEN: #3cbf9c;
     --GREY_GRID: #cbd4db;
@@ -21,8 +21,8 @@
 }
 
 body {
-    background-color: var(--WHITE);
-    color: var(--CHARCOAL);
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     box-sizing: border-box;
@@ -269,7 +269,7 @@ body {
 
 .footer{
     grid-area: footer;
-    background-color: var(--CHARCOAL);
+    background-color: #000000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -285,7 +285,7 @@ body {
     justify-content: center;
     margin-right: 50px;
     font-size: 14px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .footer-image {

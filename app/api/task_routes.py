@@ -1,21 +1,15 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import Task, Project, db,  User
-# from app.api.comment_routes import delete_comment
 from app.forms import TaskForm
 from flask_login import login_required
 
 task_routes = Blueprint('tasks', __name__)
 
 
-# def delete_task(task, id):
-#     comments = Comment.query.filter_by(task_id=id).all()
-#     length = len(comments)
-#     i = 0
-#     while i < length:
-#         delete_comment(comments[i])
-#         i += 1
-#     db.session.delete(task)
-#     db.session.commit()
+def delete_task(task, id):
+
+    db.session.delete(task)
+    db.session.commit()
 
 
 @task_routes.route('', methods=["GET"])
@@ -85,19 +79,11 @@ def edit(id):
     return task.to_dict()
 
 
-# @task_routes.route('/<int:id>', methods=["DELETE"])
-# @login_required
-# def delete(id):
-#     task = Task.query.get(id)
-#     delete_task(task, id)
-#     db.session.commit()
-#     return {'id': id}
+@task_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete(id):
+    task = Task.query.get(id)
+    delete_task(task, id)
+    db.session.commit()
+    return {'id': id}
 
-
-# @task_routes.route('/<int:task_id>/comments')
-# @login_required
-# def all_comments(task_id):
-#     comments = (db.session.query(Comment, User.username).join(User)
-#                 .filter(Comment.task_id == task_id).all())
-#     return ({comment.id: {**comment.to_dict(), **{"user": name}}
-#              for comment, name in comments})

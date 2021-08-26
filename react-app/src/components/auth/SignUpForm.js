@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 
+
 const SignUpForm = () => {
+  const [errors, setErrors] = useState([]);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const [username, setUsername] = useState("");
@@ -11,13 +13,18 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const onSignUp = async (e) => {
-    e.preventDefault();
-    if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
-    }
-  };
-
+    const onSignUp = async (e) => {
+      e.preventDefault();
+      if (password === repeatPassword) {
+        const data = await dispatch(signUp(username, email, password));
+        if (data) {
+          setErrors(data);
+        }
+      } else {
+        setErrors(["Passwords do no match!"]);
+      }
+    };
+    
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -47,6 +54,13 @@ const SignUpForm = () => {
           height="70px"
         ></img> */}
       </div>
+                <div>
+            <div className="errors">
+              {errors.map((error) => (
+                <div>{error}</div>
+              ))}
+            </div>
+            </div>
       <div>
         <label>User Name</label>
         <input

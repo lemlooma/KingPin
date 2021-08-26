@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { getOneTeamFunction, getTeamsFunction } from "../store/team";
 import ProfileIcon from './ProfileIcon';
-import { Modal } from '../context/Modal';
-import TeamForm from './team/TeamForm'
+// import { Modal } from '../context/Modal';
+// import TeamForm from './team/TeamForm'
 import addtask from "../frontend-assets/aqua_add_icon.png";
 import homeicon from "../frontend-assets/home_icon.png";
 
@@ -59,7 +59,7 @@ const SideBar = () => {
                     <p style={{'paddingTop':'5px'}}>Home</p>
                 </NavLink>
             </div>
-            <div className="sidebar-teams">
+            {/* <div className="sidebar-teams">
                 <div style={{'justifyContent': 'flex-start'}} className="flex-container">
                     <h4>Teams</h4>                
                 </div>
@@ -75,8 +75,8 @@ const SideBar = () => {
                             <TeamForm prop={prop} />
                         </Modal>
                     )}
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
         </div>
     );
 };

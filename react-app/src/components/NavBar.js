@@ -5,7 +5,7 @@ import LogoutButton from "./auth/LogoutButton";
 
 const NavBar = () => {
   const profile_icon = ("https://i.imgur.com/vFYHbIg.png");
-  const kingpin_banner = ("https://i.imgur.com/aijSCPA.png");
+  const kingpin_banner = "https://i.imgur.com/aijSCPA.png";
 
   const history = useHistory();
 
@@ -42,8 +42,9 @@ const NavBar = () => {
     <nav className="nav-container">
       {user && (
         <div onClick={return_home}>
+          <h1></h1>
           <img
-            style={{ height: "45px", paddingRight: "15px" }}
+            style={{ height: "40px", width:"250px" }}
             alt="logo"
             src={kingpin_banner}
           ></img>
