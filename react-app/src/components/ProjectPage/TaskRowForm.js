@@ -29,7 +29,7 @@ const TaskRowForm = ({users, project, lastTask, setLastTask}) => {
     if (users) people = users.map(user => user.username)
 
     const select_options = people.map((person, idx) => (
-        <option name="user_id" value={idx+1}>{person}</option>
+        <option key={idx} name="user_id" value={idx+1}>{person}</option>
     ))
 
     const today = new Date()

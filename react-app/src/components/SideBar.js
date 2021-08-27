@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import { getOneTeamFunction, getTeamsFunction } from "../store/team";
 import ProfileIcon from './ProfileIcon';
-// import { Modal } from '../context/Modal';
-// import TeamForm from './team/TeamForm'
+import { Modal } from '../context/Modal';
+import TeamForm from './team/TeamForm'
 import addtask from "../frontend-assets/aqua_add_icon.png";
 import homeicon from "../frontend-assets/home_icon.png";
 
@@ -75,7 +75,7 @@ const SideBar = () => {
                             <TeamForm prop={prop} />
                         </Modal>
                     )}
-                </div>  */}
+                </div>    */}
              {/* </div> */}
         </div>
     );

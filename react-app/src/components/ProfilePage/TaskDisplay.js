@@ -17,8 +17,8 @@ const TaskDisplay = ({projects}) => {
         dispatch(getTasksFunction())
     }, [dispatch, project])
 
-    let task_components = myTasks.map(task => (
-        <MyTaskRow task={task} />
+    let task_components = myTasks.map((task, ind) => (
+        <MyTaskRow key={ind} task={task} />
     ))
 
     return (

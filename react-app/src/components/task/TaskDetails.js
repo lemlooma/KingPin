@@ -5,7 +5,6 @@ import { useHistory, useParams } from 'react-router';
 import { deleteTaskFunction, updateTaskFunction } from '../../store/task';
 
 const TaskDetails = ({ users, task, onClick}) => {
-    const profile_icon_violet = require('../../frontend-assets/profile_icon_violet.png');
 
     const history = useHistory()
     const {project_id} = useParams()
