@@ -5,6 +5,7 @@ import tasklist from "../../frontend-assets/task_list_icon.png";
 import checkmark from "../../frontend-assets/aqua_checkmark.png";
 import uncheckmark from "../../frontend-assets/grey_checkmark.png";
 const ProjectHeader = ({project, projectStatus, toggleProjectStatus}) => {
+    
     const [showModal, setShowModal] = useState(false);
     const completed = project?.complete === true ? 'Completed' : 'In Progress'
 

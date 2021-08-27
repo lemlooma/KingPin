@@ -28,7 +28,7 @@ const ProjectDisplay = ({ projects }) => {
                 <h5 className='min-margin'> New Project</h5>
             </div>
             {projects && projects.map(project => (
-                    <ProjectCard project={project} />
+                    <ProjectCard key={project.id} project={project} />
                 ))}
         </div>
     );

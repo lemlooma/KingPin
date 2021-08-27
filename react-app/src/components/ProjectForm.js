@@ -23,9 +23,9 @@ const ProjectForm = ({onClick}) => {
 
   }
 
-  const team_options = ['Frontend', 'Backend', 'Dev Ops', 'UX Design']
+  const team_options = ['Frontend', 'Backend', 'Dev Ops', 'UX Design', "Customer Support", "Emotional Support"]
   const select_insert = team_options.map((team, idx) => (
-    <option value={idx}>{team}</option>
+    <option key={idx}value={idx}>{team}</option>
   ))
 
   return (
@@ -33,8 +33,8 @@ const ProjectForm = ({onClick}) => {
       <form onSubmit={onSubmitForm}>
         <h1>New Project</h1>
         <div>
-          {errors.map(error => (
-              <div>{error}</div>
+          {errors.map((error,idx) => (
+              <div key={idx}>{error}</div>
           ))}
         </div>
         <div>
@@ -63,7 +63,7 @@ const ProjectForm = ({onClick}) => {
           </label>
         </div>
         <div>
-          <button type="submit">Create</button>
+          <button type="submit">Create Project</button>
         </div>
       </form>
     </div>

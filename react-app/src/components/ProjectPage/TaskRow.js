@@ -53,30 +53,52 @@ const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
     (assignedUser) ? assigneeId = assignedUser.id : assigneeId = "";
 
     return (
+      <>
         <tr className="task-row">
-            { task &&
-            (
-                <>
-                    <td style={{ 'borderRight': 'none' }} className="flex-container">
-                        <img onClick={toggle_status} className="complete-task-button" src={statusImg}></img>
-                    </td>
-                    <td >
-                        <div style={{ 'justifyContent': 'space-between' }} className="capitalize flex-container">
-                            <Link to={`/projects/${project_id}/tasks/${task.id}`} onClick={onClick(task.id)}>{task.title}</Link>
-                            { currentTask === task.id && (
-                                <Modal styles={styles} >
-                                    <TaskDetails users={users} task={task} onClick={onClick}/>
-                                </Modal>
-                            )}
-                            <img onClick={deleteThisTask} className="remove-task-button" src={deleteicon}></img>
-                        </div>
-                    </td>
-                    <td>{assignee}</td>
-                    <td style={{ 'borderRight': 'none'}} className="task-due-date">{due}</td>
-                </>
-            )
-            }
+          {task && (
+            <>
+              <td style={{ borderRight: "none" }} className="flex-container">
+                <img
+                  onClick={toggle_status}
+                  className="complete-task-button"
+                  src={statusImg}
+                ></img>
+              </td>
+              <td>
+                <div
+                  style={{ justifyContent: "space-between" }}
+                  className="capitalize flex-container"
+                >
+                  <Link
+                    to={`/projects/${project_id}/tasks/${task.id}`}
+                    onClick={onClick(task.id)}
+                  >
+                    {task.title}
+                  </Link>
+                  {currentTask === task.id && (
+                    <Modal styles={styles}>
+                      <TaskDetails
+                        users={users}
+                        task={task}
+                        onClick={onClick}
+                      />
+                    </Modal>
+                  )}
+                  <img
+                    onClick={deleteThisTask}
+                    className="remove-task-button"
+                    src={deleteicon}
+                  ></img>
+                </div>
+              </td>
+              <td>{assignee}</td>
+              <td style={{ borderRight: "none" }} className="task-due-date">
+                {due}
+              </td>
+            </>
+          )}
         </tr>
+      </>
     );
 };
 

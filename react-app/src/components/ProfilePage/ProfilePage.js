@@ -8,7 +8,6 @@ import ProjectDeleteForm from "./ProjectDeleteForm";
 import { Modal } from "../../context/Modal";
 import pics from "../../frontend-assets/remove_icon.png";
 const ProfilePage = () => {
-  
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const user = useSelector((state) => state.session.user);
