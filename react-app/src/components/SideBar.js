@@ -17,9 +17,9 @@ const SideBar = () => {
     const [showModal, setShowModal] = useState(false)
     const [prop, setProp] = useState(null)
 
-    useEffect(()=>{
-        dispatch(getTeamsFunction())
-    },[dispatch])
+    // useEffect(()=>{
+    //     dispatch(getTeamsFunction())
+    // },[dispatch])
 
     const onNewClick = () =>{
         setProp({ modal:setShowModal })
@@ -75,8 +75,8 @@ const SideBar = () => {
                             <TeamForm prop={prop} />
                         </Modal>
                     )}
-                </div> */}
-            {/* </div> */}
+                </div>  */}
+             {/* </div> */}
         </div>
     );
 };
