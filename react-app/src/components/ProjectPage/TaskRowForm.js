@@ -29,13 +29,13 @@ const TaskRowForm = ({users, project, lastTask, setLastTask}) => {
     if (users) people = users.map(user => user.username)
 
     const select_options = people.map((person, idx) => (
-        <option name="user_id" value={idx+1}>{person}</option>
+        <option key={idx} name="user_id" value={idx+1}>{person}</option>
     ))
 
     const today = new Date()
 
     return (
-        <form className="task-form-container" onSubmit={onSubmit}>
+        <form className="task-form-container" onSubmit={onSubmit} >
             <button className="task-form-button" type='submit'>
                 <img style={{ 'width': '20px', 'paddingLeft': '18px' }} src={addtask}></img>
             </button>

@@ -75,8 +75,8 @@ const SideBar = () => {
                             <TeamForm prop={prop} />
                         </Modal>
                     )}
-                </div>  */}
-             {/* </div> */}
+                </div>    */}
+              {/* </div> */}
         </div>
     );
 };
