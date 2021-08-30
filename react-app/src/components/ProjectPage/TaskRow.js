@@ -68,7 +68,10 @@ const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
                 style={{ justifyContent: "space-between" }}
                 className="capitalize flex-container"
               >
-                <Link to={`/projects/${task.project_id}/tasks/${task.id}`}>
+                <Link
+                  to={`/projects/${project_id}/tasks/${task.id}`}
+                  onClick={onClick(task.id)}
+                >
                   {status ? <strike> {task.title}</strike> : task.title}
                 </Link>
                 {currentTask === task.id && (
