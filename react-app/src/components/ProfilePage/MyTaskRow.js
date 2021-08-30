@@ -46,7 +46,7 @@ const TaskRow = ({ task }) => {
             </div>
             <div className="capitalize" style={{ paddingLeft: "10px" }}>
               <Link to={`/projects/${task.project_id}/tasks/${task.id}`}>
-                {task.title}
+                {status?<strike> {task.title}</strike>:task.title}
               </Link>
 
               {showModal && (

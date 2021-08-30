@@ -1,7 +1,7 @@
-const SET_PROJECTS = "projects/SET_PROJECT";
+const SET_PROJECTS = "projects/SET_PROJECTS";
 const ADD_PROJECT = "/projects/ADD_PROJECT";
 const REMOVE_PROJECT = "projects/REMOVE_PROJECT";
-
+const SET_PROJECT = "projects/SET_PROJECT";
 const setProjects = (projects) => ({
   type: SET_PROJECTS,
   projects,
@@ -17,6 +17,11 @@ const removeProject = (payload) => ({
   payload,
 });
 
+const setProject = (project) => ({
+  type: SET_PROJECT,
+  project,
+});
+
 export const getProject = (projectId) => async (dispatch) => {
   const response = await fetch(`/api/projects/${projectId}`, {
     headers: { "Content-Type": "application/json" },
@@ -25,7 +30,7 @@ export const getProject = (projectId) => async (dispatch) => {
   if (!response.ok) {
     return;
   }
-  dispatch(addProject(data));
+  dispatch(setProject(data));
 };
 
 export const projects = () => async (dispatch) => {
@@ -77,7 +82,7 @@ export const updateProjectStatus = (project) => async (dispatch) => {
   if (!response.ok) {
     return;
   }
-  return dispatch(addProject(data));
+  return dispatch(setProject(data));
 };
 
 const initialState = { project: null, projects: [] };
@@ -96,7 +101,9 @@ const projectReducer = (state = initialState, action) => {
     case ADD_PROJECT:
       const allProjects = [...state.projects];
       allProjects.push(action.project);
-      return { project: action.project, projects: [...allProjects] };
+      return {  projects: [...allProjects] };
+    case SET_PROJECT:
+      return {...state,project:action.project}
     default:
       return state;
   }

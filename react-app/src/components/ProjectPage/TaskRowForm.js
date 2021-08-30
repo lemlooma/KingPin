@@ -35,7 +35,7 @@ const TaskRowForm = ({users, project, lastTask, setLastTask}) => {
     const today = new Date()
 
     return (
-        <form className="task-form-container" onSubmit={onSubmit}>
+        <form className="task-form-container" onSubmit={onSubmit} >
             <button className="task-form-button" type='submit'>
                 <img style={{ 'width': '20px', 'paddingLeft': '18px' }} src={addtask}></img>
             </button>

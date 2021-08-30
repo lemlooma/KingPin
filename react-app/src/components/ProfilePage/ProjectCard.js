@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import tasklist from "../../frontend-assets/task_list_icon.png"
 
-const ProjectDisplay = ({ project }) => {
+const ProjectCard = ({ project }) => {
   return (
     <div className="project-card">
       <NavLink to={`/projects/${project.id}`}>
@@ -13,4 +13,4 @@ const ProjectDisplay = ({ project }) => {
   );
 };
 
-export default ProjectDisplay;
+export default ProjectCard;
