@@ -43,3 +43,4 @@ export const Modal = ({ onClose, children, styles }) => {
     modalNode
   );
 };
+

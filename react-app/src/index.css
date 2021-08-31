@@ -41,7 +41,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+ animation:modalSlide 0.5s ease-out forwards;
+transform: translateY(50%);}
 
 .modal-background {
   position: fixed;
@@ -51,12 +52,25 @@ body {
   bottom: 0;
   background-color: transparent;
 }
+  #modal-background.onClose {
+    animation: 1s slideDown;
+   }
 
 .modal-content {
   position: absolute;
   background-color: transparent;
 }
 
+  @keyframes modalSlide {
+    from {
+      transform: translateY(50%);
+     opacity: 0;
+   }
+     to {
+     transform: translateY(0);
+     opacity: 1;
+    }
+  }
 
 /* PROFILE LOGOUT BUTTON MODAL */
 
