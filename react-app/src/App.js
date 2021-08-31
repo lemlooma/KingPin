@@ -10,10 +10,13 @@ import ProfilePage from "./components/ProfilePage/ProfilePage";
 import ProjectPage from "./components/ProjectPage/ProjectPage";
 import { authenticate } from "./store/session";
 import ProjectForm from "./components/ProjectForm";
+import SplashPage from "./components/SplashPage/SplashPage";
+
 
 function App() {
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -33,6 +36,12 @@ function App() {
           <NavBar />
         </div>
         <Switch>
+          <Route path="/splash" exact={true}>
+            <SplashPage
+              authenticated={authenticated}
+              setAuthenticated={setAuthenticated}
+            />
+          </Route>
           <Route path="/login" exact={true}>
             <div className={`main flex-container`}>
               <LoginForm />
@@ -65,9 +74,9 @@ function App() {
             <ProjectForm />
           </ProtectedRoute>
         </Switch>
-         <div className={`footer`}>
-          <Footer /> 
-         </div> 
+        <div className={`footer`}>
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );
