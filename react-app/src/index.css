@@ -745,3 +745,9 @@ input:focus {
   flex-direction: row;
   width:100%
 }
+
+.logout-button{
+  color:white;
+  background-color: red;
+
+}

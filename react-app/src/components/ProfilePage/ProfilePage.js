@@ -31,7 +31,7 @@ const ProfilePage = () => {
   }; // show delete button modal
   const props = { projects: my_projects, modal: setShowModal };
 
-  console.log({my_projects,current_projects})
+ 
   return (
     <div className="profile-container">
       <div className="sidebar">

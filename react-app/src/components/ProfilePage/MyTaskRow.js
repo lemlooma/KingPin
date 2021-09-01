@@ -7,7 +7,6 @@ import uncheckmark from "../../frontend-assets/grey_checkmark.png";
 const TaskRow = ({ task }) => {
     const [status, setStatus] = useState(task.complete);
     const [showModal, setShowModal] = useState(false);
-    const incomplete_check = require('../../frontend-assets/grey_checkmark.png')
     // const onClick = () => { setShowModal(true) }
 
     const dateFormat = (dateString) => {
