@@ -70,7 +70,7 @@ export default function SplashPage({ authenticated }) {
           </div>
           <div className="content__container">
             <h2 className="content-title">
-              We Mange your Project from Start to Finish
+             The Art of Project Management 
             </h2>
             <NavLink to="/login" className="sign-up-button">
               <span className="text">Log In</span>
