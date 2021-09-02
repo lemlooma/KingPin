@@ -13,7 +13,7 @@ const LogoutButton = () => {
     history.push("/splash");
   };
 
-  return <button className="logout-button" onClick={onLogout}>LogOut</button>;
+  return <button className="logout-button" onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;

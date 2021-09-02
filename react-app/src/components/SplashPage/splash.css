@@ -4,8 +4,8 @@
 }
 
 .content-title {
-    width: 300px;
-    font-size: 2rem;
+    width: 400px;
+    font-size: 3rem;
 }
 
 .splash-title {
@@ -16,7 +16,7 @@
 }
 
 .grid__container {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +61,7 @@
 
     margin-top: 70px;
 }
-.log-in-button {
+/* .log-in-button {
     margin-top: 20px;
     background-color: #a5f1a9;
 
@@ -81,23 +81,18 @@
 .log-in-button:hover {
     background-color: #5cd376;
     cursor: pointer;
-}
+} */
 
 .sign-up-button {
-    margin-top: 20px;
-    border: 0px;
-    background-color: #a5f1a9;
-
-    height: 33.33px;
-    /* letter-spacing: 0.1rem; */
-    color: #ffffff;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    transition: background-color 0.5s;
-    transition-timing-function: ease-in-out;
+    background-color: #58be69 ;
+    border: 1px solid #58be69 ;
+    border-radius: 5px;
+    color: white;
     width: 100%;
-    text-decoration: none;
+    padding: .75em 1em;
+    margin-top: 20px;
+    transition: background-color 400ms, border 400ms, color 400ms;
+
 }
 
 .sign-up-button:hover {
@@ -119,4 +114,5 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    
 }

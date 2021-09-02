@@ -72,7 +72,7 @@ const TaskDetails = ({ users, task, onClick}) => {
      <div className="taskDetailContainer">
          <div style={{ 'justifyContent': 'flex-start', 'borderBottom':'2px solid var(--GREY_HIGHLIGHT)' }} className='flex-container min-margin'>
              <div className='nav-link' onClick={onClick(null)}>Exit</div>
-             <div className='nav-link' onClick={onEditTask}>Update</div>
+             <div className='nav-link' onClick={onEditTask} >Update</div>
              <div className='nav-link' onClick={onDeleteTask}>Delete</div>
          </div>
          <div className="taskDetailContent">
@@ -92,7 +92,7 @@ const TaskDetails = ({ users, task, onClick}) => {
                     </label>
                      <label>
                          <h3>Due Date</h3>
-                         <input type='date' name='dueInput' value={dueInput} onChange={e => setDueInput(e.target.value)}></input>
+                         <input type='date' name='dueInput' value={dueInput} onChange={e => setDueInput(e.target.value)} ></input>
                      </label>
                      <label>
                          <h3>Description</h3>

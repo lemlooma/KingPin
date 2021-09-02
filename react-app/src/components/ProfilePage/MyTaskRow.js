@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Modal } from "../../context/Modal";
 import TaskDetails from "../task/TaskDetails";
-import checkmark from "../../frontend-assets/aqua_checkmark.png";
-import uncheckmark from "../../frontend-assets/grey_checkmark.png";
+
+import dot from "../../frontend-assets/profile_icon_violet.png";
 const TaskRow = ({ task }) => {
     const [status, setStatus] = useState(task.complete);
     const [showModal, setShowModal] = useState(false);
+   
     // const onClick = () => { setShowModal(true) }
 
     const dateFormat = (dateString) => {
@@ -26,8 +27,8 @@ const TaskRow = ({ task }) => {
         
       };
 
-    let statusImg;
-    status ? (statusImg = checkmark) : (statusImg = uncheckmark);
+    // let statusImg;
+    // status ? (statusImg = checkmark) : (statusImg = uncheckmark);
 
     let due;
     task.due_date ? due = dateFormat(task.due_date) : due = ""
@@ -38,14 +39,14 @@ const TaskRow = ({ task }) => {
           <>
             <div style={{ borderRight: "none" }} className="flex-container">
               <img
-                style={{ width: "20px" }}
+                style={{ width: "8px" }}
                 onClick={toggle_status}
-                src={statusImg}
+                src={dot}
               ></img>
             </div>
             <div className="capitalize" style={{ paddingLeft: "10px" }}>
               <Link to={`/projects/${task.project_id}/tasks/${task.id}`}>
-                {status?<strike> {task.title}</strike>:task.title}
+                {task.title}
               </Link>
 
               {showModal && (

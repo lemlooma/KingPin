@@ -428,12 +428,12 @@ transform: translateY(50%);}
   background-color: var(--SIDEBAR_CHARCOAL);
 }
 
-.add-team-button {
+/* .add-team-button {
   width: 20px;
   padding-right: 20px;
   transition: transform 300ms;
   cursor: pointer;
-}
+} */
 
 .add-team-button:hover {
   transform: scale(1.2);
@@ -732,14 +732,7 @@ input:focus {
   justify-content: space-between;
 }
 
-.user-multiselect{
-  display: flex;
-  flex-direction: row;
-  width:100%
-}
-.current-team-members{
-  color: #151b26;
-}
+
 .project-select{
   display: flex;
   flex-direction: row;
@@ -747,7 +740,12 @@ input:focus {
 }
 
 .logout-button{
-  color:white;
-  background-color: red;
+color: black;
+background-color: white;
+border-color: red;
+border-radius: 6px;
+}
 
+.logout-button:hover{
+  color: red;
 }
