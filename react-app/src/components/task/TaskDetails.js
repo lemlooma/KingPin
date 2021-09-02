@@ -72,7 +72,7 @@ const TaskDetails = ({ users, task, onClick}) => {
      <div className="taskDetailContainer">
          <div style={{ 'justifyContent': 'flex-start', 'borderBottom':'2px solid var(--GREY_HIGHLIGHT)' }} className='flex-container min-margin'>
              <div className='nav-link' onClick={onClick(null)}>Exit</div>
-             <div className='nav-link' onClick={onEditTask}>Update</div>
+             <div className='nav-link' onClick={onEditTask} >Update</div>
              <div className='nav-link' onClick={onDeleteTask}>Delete</div>
          </div>
          <div className="taskDetailContent">

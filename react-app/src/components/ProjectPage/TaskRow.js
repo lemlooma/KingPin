@@ -70,8 +70,9 @@ const TaskRow = ({users, task, currentTask, onClick, deleteTask}) => {
               >
                 <Link
                   to={`/projects/${project_id}/tasks/${task.id}`}
-                  onClick={onClick(task.id)}>
-                 { task.title}
+                  onClick={onClick(task.id)}
+                >
+                  {status ? <strike> {task.title}</strike> : task.title}
                 </Link>
                 {currentTask === task.id && (
                   <Modal styles={styles}>

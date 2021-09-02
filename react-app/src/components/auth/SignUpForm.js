@@ -69,6 +69,7 @@ const SignUpForm = () => {
           name="username"
           onChange={updateUsername}
           value={username}
+          required
         ></input>
       </div>
       <div>
@@ -78,6 +79,7 @@ const SignUpForm = () => {
           name="email"
           onChange={updateEmail}
           value={email}
+          required
         ></input>
       </div>
       <div>
