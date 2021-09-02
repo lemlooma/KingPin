@@ -14,7 +14,7 @@ const ProjectDisplay = ({ projects }) => {
         e.preventDefault();
         setShowModal(true)
     }
-    // console.log(projects)
+   
     return (
         <div className="my-project-wrap">
             <div className="project-card">
