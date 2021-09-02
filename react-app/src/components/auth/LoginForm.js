@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import { login } from "../../store/session";
 
 const LoginForm = () => {
+  const logo = ("https://i.imgur.com/aijSCPA.png");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.session.user);
   const [errors, setErrors] = useState([]);
@@ -20,10 +21,10 @@ const LoginForm = () => {
 
   const demoLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login("demo@aa.io", "password"));
-    if (data.errors) {
-      setErrors(data.errors);
-    }
+    await dispatch(login("demo@aa.io", "password"));
+    // if (data.errors) {
+    //   setErrors(data.errors);
+    // }
   };
 
   const updateEmail = (e) => {
@@ -41,11 +42,11 @@ const LoginForm = () => {
   return (
     <form onSubmit={onLogin}>
       <div className="flex-container">
-        {/* <img
+        <img
           style={{ paddingBottom: "20px" }}
-          src={require("../../frontend-assets/logo_black_text_trans.png")}
-          height="70px"
-        ></img> */}
+          src={logo}
+          height="60px"
+        ></img>
       </div>
       <div>
         {errors.map((error) => (

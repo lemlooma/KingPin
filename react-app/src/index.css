@@ -1,19 +1,19 @@
 /* TODO Add site wide styles */
 /* UNIVERSAL */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
 
 :root {
-    --CHARCOAL: #222b37;
-    --SIDEBAR_CHARCOAL: #151b26;
-    --SIDEBAR_CHARCOAL_HIGHLIGHT: #3a4049;
-    --GREY_TEXT: #cbd4db;
+    --CHARCOAL: #000000;
+    --SIDEBAR_CHARCOAL: #1d1b1b;
+    --SIDEBAR_CHARCOAL_HIGHLIGHT: #757070a2;
+    --GREY_TEXT: #ffffff;
     --GREY_TEXT_LABELS: #6e7782;
     --WHITE: #ffffff;
     --ORANGE_FADE: #fe9c2a;
-    --RED_FADE: #fa5356;
+    --RED_FADE: #34c82e;
     --GOLD: #fbbc00;
     --SKY_BLUE: #19aaf5;
-    --VIOLET: #786dff;
+    --VIOLET: #58be69;
     --AQUA_GREEN: #25e9c8;
     --DUE_DATE_GREEN: #3cbf9c;
     --GREY_GRID: #cbd4db;
@@ -21,8 +21,8 @@
 }
 
 body {
-    background-color: var(--WHITE);
-    color: var(--CHARCOAL);
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     box-sizing: border-box;
@@ -41,7 +41,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+ animation:modalSlide 0.5s ease-out forwards;
+transform: translateY(50%);}
 
 .modal-background {
   position: fixed;
@@ -51,12 +52,25 @@ body {
   bottom: 0;
   background-color: transparent;
 }
+  #modal-background.onClose {
+    animation: 1s slideDown;
+   }
 
 .modal-content {
   position: absolute;
   background-color: transparent;
 }
 
+  @keyframes modalSlide {
+    from {
+      transform: translateY(50%);
+     opacity: 0;
+   }
+     to {
+     transform: translateY(0);
+     opacity: 1;
+    }
+  }
 
 /* PROFILE LOGOUT BUTTON MODAL */
 
@@ -108,78 +122,8 @@ body {
   overflow-x: hidden;
 }
 
-.commentText {
-  width: 300px;
-  padding-left: 5px;
-  font-size: 14px;
-  margin: 0px;
-}
 
 
-.comment-container {
-    display:flex;
-    align-items: flex-start;
-    padding: 10px;
-    margin-bottom:25px;
-    height: 30px;
-
-}
-
-.commenter-icon {
-  width: 20px;
-  height: 20px;
-  padding-left: 10px;
-}
-
-.commenter-initial {
-  position: relative;
-  font-size: 10px;
-  top: 4px;
-  left: -13px;
-  color: white;
-}
-
-/* COMMENT FORM */
-
-.modalCommentForm {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.modalCommentForm form {
-  margin-top: 0px;
-  padding: 10px;
-  width: 450px;
-}
-
-.modalCommentForm input {
-  width: 100%;
-  margin: 0px;
-}
-
-.dropDownDiv {
-  width: 50px;
-  height: 15px;
-  padding: 2px;
-  position: relative;
-  left: 30px;
-  top: 0px;
-  font-size: 14px;
-}
-
-.outline {
-  width: 40px;
-  height: 15px;
-  padding: 2px;
-}
-
-.commentSelect {
-  font-size: 14px;
-  top: 0px;
-  position: relative;
-  left: 35px;
-}
 
 
 /* Task Details Update Form */
@@ -269,7 +213,7 @@ body {
 
 .footer{
     grid-area: footer;
-    background-color: var(--CHARCOAL);
+    background-color: #000000;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -285,7 +229,7 @@ body {
     justify-content: center;
     margin-right: 50px;
     font-size: 14px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .footer-image {
@@ -293,8 +237,6 @@ body {
   height: 20px;
   margin-right: 5px;
 }
-
-
 
 /* PROFILE PAGE */
 .profile-container {
