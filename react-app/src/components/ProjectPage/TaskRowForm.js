@@ -7,7 +7,7 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [userId, setUserId] = useState("");
-  const [dueDate, setDueDate] = useState(null);
+  const [dueDate, setDueDate] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
     setLastTask(title);
     setTitle("");
     setUserId("");
-    setDueDate(null);
+    setDueDate("");
   };
 
   let project_id;
@@ -75,6 +75,7 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
         name="due_date"
         onChange={(e) => setDueDate(e.target.value)}
         value={dueDate}
+        required={true}
       />
     </form>
   );
