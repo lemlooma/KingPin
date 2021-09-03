@@ -27,6 +27,8 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
     setDueDate("");
   };
 
+  
+
   let project_id;
   if (project) project_id = project.id;
 

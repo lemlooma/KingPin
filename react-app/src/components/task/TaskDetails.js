@@ -35,6 +35,7 @@ const TaskDetails = ({ users, task, onClick}) => {
     ))
 
     const onEditTask = () => {
+         
         let taskId = task.id;
         let projectId = project_id;
         let complete = task.complete;
@@ -42,10 +43,11 @@ const TaskDetails = ({ users, task, onClick}) => {
         let userId = assigneeIdInput;
         let dueDate = dueInput;
         let description = descriptionInput;
-        
+      
         dispatch(updateTaskFunction(taskId, projectId, title, complete, userId, dueDate, description))
         onClick(null)
-        history.push(`/projects/${project_id}`)
+        alert("Your edit has been submitted!")
+        // history.push(`/projects/${project_id}`)
     }
     // ------------------------
 
@@ -86,7 +88,7 @@ const TaskDetails = ({ users, task, onClick}) => {
                     <label>
                          <h3>Assignee</h3>
                          <select className="task-form-select" value={assigneeIdInput} onChange={e => setAssigneeIdInput(e.target.value)}>
-                             <option value={""}></option>
+                             
                              {select_options}
                          </select>
                     </label>
