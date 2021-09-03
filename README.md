@@ -5,6 +5,8 @@
 </p>
 
 
+Live Link: https://king-pin-app.herokuapp.com/splash
+
 ## Technologies used
 - <a href="https://www.python.org/"><img alt="Python" src="https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white&" /></a>
 - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS3-1572B6?logo=CSS3" /></a>
