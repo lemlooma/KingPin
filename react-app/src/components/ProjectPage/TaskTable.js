@@ -38,7 +38,7 @@ const TaskTable = ({ projectProp }) => {
     return (
         <table onClick={onClick}>
             <thead>
-                <tr className="task-row-titles task-row">
+                <tr className="task-row-header">
                     <td style={{ 'borderRight': 'none' }}></td>
                     <td>Task Name</td>
                     <td>Assignee</td>
