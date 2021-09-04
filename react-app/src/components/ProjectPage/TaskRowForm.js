@@ -27,6 +27,8 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
     setDueDate("");
   };
 
+  
+
   let project_id;
   if (project) project_id = project.id;
 
@@ -58,6 +60,7 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
         value={title}
         required={true}
         placeholder="Add task..."
+        maxLength="100"
       />
       <select
         className="task-form-select"

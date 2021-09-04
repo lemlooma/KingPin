@@ -503,6 +503,19 @@ transform: translateY(50%);}
     font-size: 14px;
 }
 
+.task-row-header{
+      display: grid;
+    grid-template-areas:
+      "complete task assignee due-date";
+    grid-template-columns:50px 1fr 200px 200px;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    background-color: var(--WHITE);
+    font-size: 14px;
+    
+}
+
 .task-row:hover {
     background-color: var(--GREY_HIGHLIGHT);
 }
