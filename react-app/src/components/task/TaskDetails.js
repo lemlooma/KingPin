@@ -4,104 +4,143 @@ import { useHistory, useParams } from 'react-router';
 
 import { deleteTaskFunction, updateTaskFunction } from '../../store/task';
 
-const TaskDetails = ({ users, task, onClick}) => {
+const TaskDetails = ({ users, task, onClick }) => {
+  const history = useHistory();
+  const { project_id } = useParams();
 
-    const history = useHistory()
-    const {project_id} = useParams()
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.session.user);
 
-    const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user);
+  const [showMenu, setShowMenu] = useState(null);
 
-    const [showMenu, setShowMenu] = useState(null);
+  const dateFormat = (dateStr) => {
+    if (dateStr === null) return dateStr;
+    let newDate = new Date(dateStr);
+    let due = newDate.toISOString().substr(0, 10);
+    return due;
+  };
 
-    const dateFormat = (dateStr) => {
-        if(dateStr === null) return dateStr
-        let newDate = new Date(dateStr);
-        let due = newDate.toISOString().substr(0,10)
-        return due
+  // UPDATE TASK FORM ------
+  const [titleInput, setTitleInput] = useState(task.title);
+  const [assigneeIdInput, setAssigneeIdInput] = useState(task.user_id);
+  const [dueInput, setDueInput] = useState(dateFormat(task.due_date));
+  const [descriptionInput, setDescriptionInput] = useState(task.description);
+
+  let people;
+  if (users) people = users.map((user) => user.username);
+
+  const select_options = people.map((person, idx) => (
+    <option key={`${person}-${idx}`} name="user_id" value={idx + 1}>
+      {person}
+    </option>
+  ));
+
+  const onEditTask =  (e) => {
+    e.preventDefault()
+
+    let taskId = task.id;
+    let projectId = project_id;
+    let complete = task.complete;
+    let title = titleInput;
+    let userId = assigneeIdInput;
+    let dueDate = dueInput;
+    let description = descriptionInput;
+
+    dispatch(
+      updateTaskFunction(
+        taskId,
+        projectId,
+        title,
+        complete,
+        userId,
+        dueDate,
+        description
+      )
+    );
+    onClick(null);
+    alert("Your edit has been submitted!")
+    // history.push(`/projects/${project_id}`);
+  };
+  // ------------------------
+
+  const openMenu = (e) => {
+    e.preventDefault();
+    if (showMenu) {
+      setShowMenu(null);
+      return;
+    } else {
+      setShowMenu(e.target.id);
+      return;
     }
+  };
 
-    // UPDATE TASK FORM ------
-    const [titleInput, setTitleInput] = useState(task.title);
-    const [assigneeIdInput, setAssigneeIdInput] = useState(task.user_id);
-    const [dueInput, setDueInput] = useState(dateFormat(task.due_date));
-    const [descriptionInput, setDescriptionInput] = useState(task.description);
+  const onDeleteTask = () => {
+    dispatch(deleteTaskFunction(task.id));
+    onClick(null);
+    history.push(`/projects/${project_id}`);
+  };
 
-    let people;
-    if (users) people = users.map(user => user.username)
-
-    const select_options = people.map((person, idx) => (
-        <option key={`${person}-${idx}`} name="user_id" value={idx + 1}>{person}</option>
-    ))
-
-    const onEditTask = () => {
-         
-        let taskId = task.id;
-        let projectId = project_id;
-        let complete = task.complete;
-        let title = titleInput;
-        let userId = assigneeIdInput;
-        let dueDate = dueInput;
-        let description = descriptionInput;
-      
-        dispatch(updateTaskFunction(taskId, projectId, title, complete, userId, dueDate, description))
-        onClick(null)
-        alert("Your edit has been submitted!")
-        // history.push(`/projects/${project_id}`)
-    }
-    // ------------------------
-
-    const openMenu = e => {
-        e.preventDefault();
-        if(showMenu){
-            setShowMenu(null);
-            return;
-        }else {
-            setShowMenu(e.target.id);
-            return;
-        };
-    };
-
-
-    const onDeleteTask = () => {
-        dispatch(deleteTaskFunction(task.id))
-        onClick(null)
-        history.push(`/projects/${project_id}`)
-    }
-
-
- return (
-     <div className="taskDetailContainer">
-         <div style={{ 'justifyContent': 'flex-start', 'borderBottom':'2px solid var(--GREY_HIGHLIGHT)' }} className='flex-container min-margin'>
-             <div className='nav-link' onClick={onClick(null)}>Exit</div>
-             <div className='nav-link' onClick={onEditTask} >Update</div>
-             <div className='nav-link' onClick={onDeleteTask}>Delete</div>
-         </div>
-         <div className="taskDetailContent">
-            <h2 className="min-margin capitalize" >{task.title}</h2>
-            <div>
-                <form className='task-detail-form' onSubmit={onEditTask}>
-                     <label>
-                         <h3>Task Title</h3>
-                         <input type='text' name='titleInput' value={titleInput} onChange={e => setTitleInput(e.target.value)} ></input>
-                     </label>
-                    <label>
-                         <h3>Assignee</h3>
-                         <select className="task-form-select" value={assigneeIdInput} onChange={e => setAssigneeIdInput(e.target.value)}>
-                             
-                             {select_options}
-                         </select>
-                    </label>
-                     <label>
-                         <h3>Due Date</h3>
-                         <input type='date' name='dueInput' value={dueInput} onChange={e => setDueInput(e.target.value)} ></input>
-                     </label>
-                     <label>
-                         <h3>Description</h3>
-                     </label>
-                     <textarea value={descriptionInput} onChange={e => setDescriptionInput(e.target.value)}></textarea>
-                </form>
-                {/* <div>
+  return (
+    <div className="taskDetailContainer">
+      <div
+        style={{
+          justifyContent: "flex-start",
+          borderBottom: "2px solid var(--GREY_HIGHLIGHT)",
+        }}
+        className="flex-container min-margin"
+      >
+        <div className="nav-link" onClick={onClick(null)}>
+          Exit
+        </div>
+        <div className="nav-link" onClick={onEditTask}>
+          Update
+        </div>
+        <div className="nav-link" onClick={onDeleteTask}>
+          Delete
+        </div>
+      </div>
+      <div className="taskDetailContent">
+        <h2 className="min-margin capitalize">{task.title}</h2>
+        <div>
+          <form className="task-detail-form" onSubmit={onEditTask}>
+            <label>
+              <h3>Task Title</h3>
+              <input
+                maxLength="100"
+                type="text"
+                name="titleInput"
+                value={titleInput}
+                onChange={(e) => setTitleInput(e.target.value)}
+              ></input>
+            </label>
+            <label>
+              <h3>Assignee</h3>
+              <select
+                className="task-form-select"
+                value={assigneeIdInput}
+                onChange={(e) => setAssigneeIdInput(e.target.value)}
+              >
+                {select_options}
+              </select>
+            </label>
+            <label>
+              <h3>Due Date</h3>
+              <input
+                type="date"
+                name="dueInput"
+                value={dueInput}
+                onChange={(e) => setDueInput(e.target.value)}
+              ></input>
+            </label>
+            <label>
+              <h3>Description</h3>
+            </label>
+            <textarea
+              value={descriptionInput}
+              onChange={(e) => setDescriptionInput(e.target.value)}
+            ></textarea>
+          </form>
+          {/* <div>
                      <h4 style={{ 'marginTop': '20px', 'marginLeft': '10px'}}>Comments</h4>
                     <div className="modalCommentForm">
                         <CommentForm comment2={currComment?.comment} commentId={currComment?.id} onSetCurr={() => setCurrComment(null)}/>
@@ -125,9 +164,9 @@ const TaskDetails = ({ users, task, onClick}) => {
                         </div>
                     ))}
                 </div> */}
-            </div>
-         </div>
-     </div>
- )
-}
+        </div>
+      </div>
+    </div>
+  );
+};
 export default TaskDetails

@@ -14,6 +14,7 @@ const TaskTable = ({ projectProp }) => {
     const [currentTask, setCurrentTask] = useState(null)
     const [lastDeletedTask, setLastDeletedTask] = useState('')
     const onClick = (id) => () => { setCurrentTask(id) };
+   
 
     const deleteTask = (taskId) => {
         dispatch(deleteTaskFunction(taskId))
