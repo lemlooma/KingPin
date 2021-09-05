@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 
 function Footer() {
     const WIKI_PATH = "https://github.com/lemlooma/KingPin/wiki";
-    const GITHUB_PROFILE = "https://github.com/lemlooma";
+    const LINKED_PROFILE =
+      "https://www.linkedin.com/in/lema-el-sherbiny-b41340193/";
    
 
 
@@ -16,11 +17,11 @@ function Footer() {
             <div className = 'footer-links' style={{'marginLeft':'300px'}}>
                 <a className='footer-link' href={WIKI_PATH} style={{ 'paddingRight': '60px' }}>
                    
-                    <p>Project Wiki</p>
+                    <p>Github : King Pin Repo</p>
                 </a>
-                <a className='footer-link' href={GITHUB_PROFILE}>
+                <a className='footer-link' href={LINKED_PROFILE}>
                     
-                    <p>Lema El-Sherbiny</p>
+                    <p>LinkedIn : Lema El-Sherbiny</p>
             
                 </a>
             </div>
@@ -32,7 +33,7 @@ function Footer() {
                    
                     <p>Wiki</p>
                 </a>
-                <a className='footer-link' href={GITHUB_PROFILE}>
+                <a className='footer-link' href={LINKED_PROFILE}>
                     <p>Lema El-Sherbiny</p>
                 </a>
                

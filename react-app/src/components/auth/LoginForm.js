@@ -54,7 +54,7 @@ const LoginForm = () => {
         ))}
       </div>
       <div>
-        <label htmlFor="email">Email</label>
+        <label  htmlFor="email">Email</label>
         <input
           name="email"
           type="text"
