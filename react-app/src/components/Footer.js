@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux'
 
 function Footer() {
-    const WIKI_PATH = "https://github.com/lemlooma/KingPin/wiki";
+    const REPO_PATH = "https://github.com/lemlooma/KingPin";
     const LINKED_PROFILE =
       "https://www.linkedin.com/in/lema-el-sherbiny-b41340193/";
    
@@ -15,7 +15,7 @@ function Footer() {
     if (user){
         links = (
             <div className = 'footer-links' style={{'marginLeft':'300px'}}>
-                <a className='footer-link' href={WIKI_PATH} style={{ 'paddingRight': '60px' }}>
+                <a className='footer-link' href={REPO_PATH} style={{ 'paddingRight': '60px' }}>
                    
                     <p>Github : King Pin Repo</p>
                 </a>
@@ -28,17 +28,19 @@ function Footer() {
         )
     } else {
         links = (
-            <div className='flex-container'>
-                <a className='footer-link' href={WIKI_PATH} style={{ 'paddingRight': '60px' }}>
-                   
-                    <p>Wiki</p>
-                </a>
-                <a className='footer-link' href={LINKED_PROFILE}>
-                    <p>Lema El-Sherbiny</p>
-                </a>
-               
-            </div>
-        )
+          <div className="flex-container">
+            <a
+              className="footer-link"
+              href={REPO_PATH}
+              style={{ paddingRight: "60px" }}
+            >
+              <p>Github : King Pin Repo</p>
+            </a>
+            <a className="footer-link" href={LINKED_PROFILE}>
+              <p>LinkedIn : Lema El-Sherbiny</p>
+            </a>
+          </div>
+        );
     }
 
     return (
