@@ -106,7 +106,7 @@ const TaskDetails = ({ users, task, onClick }) => {
             <label>
               <h3>Task Title</h3>
               <input
-                maxLength="100"
+                maxLength="80"
                 type="text"
                 name="titleInput"
                 value={titleInput}
@@ -138,6 +138,7 @@ const TaskDetails = ({ users, task, onClick }) => {
             <textarea
               value={descriptionInput}
               onChange={(e) => setDescriptionInput(e.target.value)}
+              maxLength="700"
             ></textarea>
           </form>
           {/* <div>

@@ -46,11 +46,12 @@ const ProjectForm = ({onClick}) => {
               onChange={e => setTitle(e.target.value)}
               value={title}
               required={true}
+              maxLength="20"
             />
           </label>
         </div>
         <div>
-          <label>
+          {/* <label>
             Team Assigned
             <select
               name="team_id"
@@ -60,7 +61,7 @@ const ProjectForm = ({onClick}) => {
             >
               {select_insert}
             </select>
-          </label>
+          </label> */}
         </div>
         <div>
           <button type="submit">Create Project</button>

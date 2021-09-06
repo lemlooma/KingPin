@@ -60,7 +60,7 @@ const TaskRowForm = ({ users, project, lastTask, setLastTask }) => {
         value={title}
         required={true}
         placeholder="Add task..."
-        maxLength="100"
+        maxLength="80"
       />
       <select
         className="task-form-select"

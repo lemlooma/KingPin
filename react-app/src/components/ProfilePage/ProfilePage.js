@@ -70,11 +70,11 @@ const ProfilePage = () => {
           </div>
           {divider}
           <ProjectDisplay projects={my_projects} />
-          <div style={{ paddingTop: "50px" }}>
+          {/* <div style={{ paddingTop: "50px" }}>
             <h3 className="min-margin">Team Projects</h3> 
            </div>
            {divider} 
-          <ProjectDisplay projects={current_projects} />
+          <ProjectDisplay projects={current_projects} /> */}
         </div>
       </div>
     </div>
