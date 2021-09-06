@@ -15,7 +15,7 @@ const ProjectHeader = ({project, projectStatus, toggleProjectStatus}) => {
     // };
 
     let statusDisplay;
-    projectStatus ? statusDisplay = checkmark : statusDisplay = uncheckmark
+    projectStatus ? statusDisplay = uncheckmark : statusDisplay = uncheckmark
 
     return (
         <>
