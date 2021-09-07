@@ -74,4 +74,16 @@ This is the starter for the Flask React project.
    There is a layer in the Dockerfile that will install psycopg2 (not binary) for us.
 ***
 
+## Contact
 
+### Lema El-Sherbiny
+<a href="https://www.linkedin.com/in/lema-el-sherbiny-b41340193/"><img src="./readme-assets/logos/linkedin-logo.png" height="28" align="middle" /></a>
+<a href="https://angel.co/u/lema-el-sherbiny"><img src="./readme-assets/logos/angellist-logo.png" height="28" align="middle" /></a>
+<a href="https://github.com/lemlooma"><img src="./readme-assets/logos/github-logo.png" height="38" align="middle" /></a>
+
+simonvargas01@gmail.com
+
+
+## Special Thanks
+* Fellow peers who have given me support and community: [Andrew](https://github.com/andru17urdna),[Pierre](https://github.com/TheGuilbotine), [Henry](https://github.com/hnrywltn), [Simon](https://github.com/Simonvargas), [Meagan](https://github.com/meagan13), [Nico](https://github.com/nicopierson), [John](https://github.com/Jomix-13), [Manna](https://github.com/makon57), and [Monte](https://github.com/theflaggship), [Kagen](https://github.com/KagenLH),[Michelle](https://github.com/michellekontoff)
+* Mentors who have given me their time and effort: [Olivia](https://github.com/OByrnes), [Ed](https://github.com/edherm), and [Javier](https://github.com/javiermortiz) 
