@@ -4,7 +4,7 @@
   <img src="https://i.imgur.com/aijSCPA.png" alt='king pin logo' />
 </p>
 
-King Pin is a clone of asana.com that focuses on helping teams manage projects and task delegation across team members. Users can create new projects and assign tasks to members to a given project.
+King Pin is a clone of asana.com that focuses on helping teams manage projects and task delegation across team members. Users can create new projects and assign tasks to members to a given project. It is a fullstack React App made with a Redux state manager and a backend using Python, Flask, SQL-Alchemy, and PostgresSQL. 
 
 * View the <a href='https://king-pin-app.herokuapp.com/'>King Ping</a> Live Demo
 
