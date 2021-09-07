@@ -77,11 +77,12 @@ This is the starter for the Flask React project.
 ## Contact
 
 ### Lema El-Sherbiny
-<a href="https://www.linkedin.com/in/lema-el-sherbiny-b41340193/"><img src="./readme-assets/logos/linkedin-logo.png" height="28" align="middle" /></a>
-<a href="https://angel.co/u/lema-el-sherbiny"><img src="./readme-assets/logos/angellist-logo.png" height="28" align="middle" /></a>
-<a href="https://github.com/lemlooma"><img src="./readme-assets/logos/github-logo.png" height="38" align="middle" /></a>
 
-simonvargas01@gmail.com
+<a href="https://www.linkedin.com/in/lema-el-sherbiny-b41340193/"><img src="https://github.com/Simonvargas/Chimera/blob/main/readme-assets/logos/linkedin-logo.png?raw=true" height="28" align="middle" /></a>
+<a href="https://angel.co/u/lema-el-sherbiny"><img src="https://github.com/Simonvargas/Chimera/blob/main/readme-assets/logos/angellist-logo.png?raw=true" height="28" align="middle" /></a>
+<a href="https://github.com/lemlooma"><img src="https://github.com/Simonvargas/Chimera/blob/main/readme-assets/logos/github-logo.png?raw=true" height="38" align="middle" /></a>
+
+lamasherb@gmail.com
 
 
 ## Special Thanks
