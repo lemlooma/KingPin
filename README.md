@@ -4,7 +4,7 @@
   <img src="https://i.imgur.com/aijSCPA.png" alt='king pin logo' />
 </p>
 
-King Pin is a clone of asana.com that focuses on helping teams manage projects and task delegation across team members. Users can create new projects and assign tasks to members of the team assigned to a given project.
+King Pin is a clone of asana.com that focuses on helping teams manage projects and task delegation across team members. Users can create new projects and assign tasks to members to a given project.
 
 Live Link: https://king-pin-app.herokuapp.com/splash
 
