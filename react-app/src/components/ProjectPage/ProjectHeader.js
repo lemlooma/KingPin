@@ -39,6 +39,8 @@ const ProjectHeader = ({project, projectStatus, toggleProjectStatus}) => {
             <div></div>
             <div></div>
         </>
+
+        
     );
 };
 
