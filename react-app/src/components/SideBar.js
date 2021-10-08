@@ -17,9 +17,9 @@ const SideBar = () => {
     const [showModal, setShowModal] = useState(false)
     const [prop, setProp] = useState(null)
 
-    // useEffect(()=>{
-    //     dispatch(getTeamsFunction())
-    // },[dispatch])
+    useEffect(()=>{
+        dispatch(getTeamsFunction())
+    },[dispatch])
 
     const onNewClick = () =>{
         setProp({ modal:setShowModal })
@@ -59,7 +59,7 @@ const SideBar = () => {
                     <p style={{'paddingTop':'5px'}}>Home</p>
                 </NavLink>
             </div>
-            <div className="sidebar-teams">
+            {/* <div className="sidebar-teams">
                 <div style={{'justifyContent': 'flex-start'}} className="flex-container">
                     <h4>Teams</h4>                
                 </div>
@@ -76,7 +76,7 @@ const SideBar = () => {
                         </Modal>
                     )}
                 </div>    
-               </div>
+               </div> */}
         </div>
     );
 };
