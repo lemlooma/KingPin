@@ -51,6 +51,7 @@ const SideBar = () => {
             <br></br>
         </>
     ))
+    
     return (
         <div className="sidebar-container">
             <div style={{ 'borderBottom':'1px solid var(--SIDEBAR_CHARCOAL_HIGHLIGHT)'}} className="sidebar-nav flex-container">
