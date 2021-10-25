@@ -21,6 +21,8 @@ const SideBar = () => {
         dispatch(getTeamsFunction())
     },[dispatch])
 
+
+    
     const onNewClick = () =>{
         setProp({ modal:setShowModal })
         setShowModal(true)
