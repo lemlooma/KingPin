@@ -17,6 +17,8 @@ const NavBar = () => {
     setShowMenu(true);
   };
 
+  
+
   useEffect(() => {
     if (!showMenu) return;
     const closeMenu = (e) => {
