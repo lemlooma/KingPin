@@ -28,7 +28,7 @@ const ProfilePage = () => {
 
   const onDelete = () => {
     setShowModal(true);
-  }; // show delete button modal
+  }; 
   const props = { projects: my_projects, modal: setShowModal };
 
  
